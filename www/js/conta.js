@@ -15,7 +15,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
 
-    /*Funcção para capturar foto do dispositivo*/
+    /*Função para capturar foto do dispositivo*/
 
     capturePhoto: function () {
 
@@ -34,41 +34,32 @@ var app = {
         function onFail(message) {
             alert('Failed because: ' + message);
         }
-    },
-
-    onDeviceReady: function () {
-
-        document.getElementById('doubleTouch').addEventListener('touchend', function (evt) {
-            if (evt.touchesList.lenght == 2) {
-                navigator.vibrate(200);
-            }
-        });
     }
 
 };
 
-    //Armazenar texto na tela principal
-    function pronto() {
+//Armazenar texto na tela principal
+function pronto() {
 
-        var titulo = localStorage.getItem('printNome');
+    var titulo = localStorage.getItem('printNome');
 
-        if (titulo) {
-            var $titulo = document.getElementById('printNome');
-            $titulo.innerHTML = titulo;
-        }
-
-        var $btn = document.getElementById('btnNome');
-
-        $btn.addEventListener('touchend', function (evt) {
-            event.preventDefault();
-
-            var $nome = document.getElementById('nome');
-            var $titulo = document.getElementById('printNome');
-
-            $titulo.innerHTML = $nome.value;
-
-            localStorage.setItem('printNome', $nome.value);
-        });
-
+    if (titulo) {
+        var $titulo = document.getElementById('printNome');
+        $titulo.innerHTML = titulo;
     }
+
+    var $btn = document.getElementById('btnNome');
+
+    $btn.addEventListener('touchend', function (evt) {
+        event.preventDefault();
+
+        var $nome = document.getElementById('nome');
+        var $titulo = document.getElementById('printNome');
+
+        $titulo.innerHTML = $nome.value;
+
+        localStorage.setItem('printNome', $nome.value);
+    });
+
+}
 document.addEventListener('deviceready', pronto);

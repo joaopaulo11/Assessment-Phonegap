@@ -13,6 +13,14 @@ function pronto() {
         if (language.value == 'es') {
             $('#bemvindo').text('Bienvenido');
         }
-    })
+    });
+
+
+    document.getElementById('doubleTouch').addEventListener('touchend', function (evt) {
+        if (evt.touchesList.lenght == 2) {
+            navigator.vibrate(200);
+        }
+    });
+
 }
 document.addEventListener('deviceready', pronto);

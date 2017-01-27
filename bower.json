@@ -1,0 +1,21 @@
+{
+  "name": "Assessment",
+  "description": "Assessment phonegap",
+  "main": "",
+  "authors": [
+    "Joao Paulo <joao_paulorj010@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/joaopaulo11/Assessment-Phonegap",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
